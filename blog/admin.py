@@ -17,12 +17,14 @@ class CarouselItemAdmin(admin.ModelAdmin):
     list_editable = ('order',)
     ordering = ('order',)
 
-@admin.register(SiteSettings)
-class SiteSettingsAdmin(admin.ModelAdmin):
-    list_display = ('whatsapp_number', 'updated_at')
+# @admin.register(SiteSettings)
+# class SiteSettingsAdmin(admin.ModelAdmin):
+#     list_display = ('whatsapp_number', 'updated_at')
     
-    def has_add_permission(self, request):
-        # Only allow one instance of SiteSettings
-        if self.model.objects.exists():
-            return False
-        return True
+#     def has_add_permission(self, request):
+#         # Only allow one instance of SiteSettings
+#         if self.model.objects.exists():
+#             return False
+#         return True
+
+admin.site.register(SiteSettings)
